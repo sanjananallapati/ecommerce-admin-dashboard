@@ -5,7 +5,7 @@ This is a full-stack e-commerce product management system designed for administr
 
 **Live Demo:** [Deployed on Vercel](https://ecommerce-admin-dashboard-3phc.vercel.app/)
 
-**GitHub Repository:** [View on GitHub](https://github.com/Ruthwik2/Server--Rendered-E-commerce-Product-Management-Dashboard)
+**GitHub Repository:** [View on GitHub](https://github.com/sanjananallapati/ecommerce-admin-dashboard)
 
 ## ✨ Key Features
 
@@ -69,8 +69,8 @@ Before you begin, ensure you have:
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/Ruthwik2/Server--Rendered-E-commerce-Product-Management-Dashboard.git
-cd Server--Rendered-E-commerce-Product-Management-Dashboard
+git clone https://github.com/sanjananallapati/ecommerce-admin-dashboard.git
+cd ecommerce-admin-dashboard
 ```
 
 2. **Install dependencies**
@@ -231,36 +231,26 @@ ecommerce-dashboard/
 
 ## 🎨 Features in Detail
 
-### Dashboard Statistics
-
-- **Total Products:** Count of all products in inventory
-- **In Stock:** Products with stock ≥ 10 units
-- **Low Stock:** Products with stock between 1-9 units
-- **Out of Stock:** Products with stock = 0
-- **Inventory Value:** Total cost of all inventory (Price × Stock for each product)
-
 ### Product Management
-
-- **Multi-step Form:** Intuitive 3-step process
-- **Real-time Validation:** Zod schema validation
-- **Image Upload:** Secure Cloudinary integration
-- **Case-Insensitive Categories:** Automatic normalization
-- **Stock Cost Calculation:** Individual product stock cost displayed
+- Add new products with validation
+- View all products in a responsive table
+- Edit existing product details
+- Delete products with confirmation
 
 ### Data Visualization
+- Interactive charts showing sales trends
+- Stock level monitoring
+- Revenue analytics
 
-- **Products by Category:** Interactive pie chart showing distribution
-- **Stock Levels:** Bar chart displaying stock per product
-- **Real-time Updates:** Charts update when products change
+### Authentication
+- Secure login with NextAuth.js
+- Session management
+- Protected routes
 
-## 🔐 Security Features
-
-- JWT-based authentication with 30-day expiry
-- Password hashing with bcryptjs
-- Protected API routes with middleware
-- Secure Cloudinary uploads with signed requests
-- Input validation with Zod schemas
-- Admin-only access controls
+### Image Upload
+- Direct upload to Cloudinary
+- Image preview before upload
+- Automatic optimization
 
 ## 🔧 Troubleshooting
 
@@ -288,7 +278,7 @@ lsof -ti:3000 | xargs kill -9
 
 For testing and evaluation purposes:
 
-- **Email:** admin@dummy.com
+- **Email:** admin@example.com
 - **Password:** admin123
 
 ⚠️ **Note:** Change these credentials in production environments.
@@ -310,10 +300,10 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👤 Author
 
-**Ruthwik**
+**Sanjana**
 
-- GitHub: [@Ruthwik2](https://github.com/Ruthwik2)
-- Project Link: [Server Rendered E-commerce Dashboard](https://github.com/Ruthwik2/Server--Rendered-E-commerce-Product-Management-Dashboard)
+- GitHub: [@sanjananallapati](https://github.com/sanjananallapati)
+- Project Link: [ecommerce Dashboard](https://github.com/sanjananallapati/ecommerce-admin-dashboard)
 
 ## 🙏 Acknowledgments
 
