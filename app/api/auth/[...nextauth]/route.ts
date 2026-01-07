@@ -3,7 +3,7 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 import { connectToDatabase } from '@/lib/mongodb'
 import bcrypt from 'bcryptjs'
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -22,18 +22,14 @@ export const authOptions: NextAuthOptions = {
             email: credentials.email
           })
 
-          if (!user) {
-            return null
-          }
+          if (!user) return null
 
           const isPasswordValid = await bcrypt.compare(
             credentials.password,
             user.password
           )
 
-          if (!isPasswordValid) {
-            return null
-          }
+          if (!isPasswordValid) return null
 
           return {
             id: user._id.toString(),
@@ -70,4 +66,5 @@ export const authOptions: NextAuthOptions = {
 }
 
 const handler = NextAuth(authOptions)
+
 export { handler as GET, handler as POST }
