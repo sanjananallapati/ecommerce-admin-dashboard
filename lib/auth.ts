@@ -18,8 +18,24 @@ export const authOptions: NextAuthOptions = {
 
         try {
           const { db } = await connectToDatabase()
+          // Bootstrap default admin on first deploy if collection is empty
+          const adminsCount = await db.collection('admins').countDocuments()
+          if (adminsCount === 0) {
+            const adminEmail = (process.env.ADMIN_EMAIL || 'admin@example.com').toLowerCase()
+            const adminPassword = process.env.ADMIN_PASSWORD || 'admin123'
+            const adminName = process.env.ADMIN_NAME || 'Admin User'
+
+            const hashed = await bcrypt.hash(adminPassword, 10)
+            await db.collection('admins').insertOne({
+              email: adminEmail,
+              password: hashed,
+              name: adminName,
+              createdAt: new Date(),
+            })
+          }
+
           const user = await db.collection('admins').findOne({
-            email: credentials.email
+            email: credentials.email.toLowerCase()
           })
 
           if (!user) return null
