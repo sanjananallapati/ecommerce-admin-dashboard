@@ -24,7 +24,7 @@ export default function LoginPage() {
       })
 
       if (result?.error) {
-        setError('Invalid credentials')
+        setError(result.error === 'CredentialsSignin' ? 'Invalid credentials' : result.error)
       } else {
         router.push('/dashboard')
       }

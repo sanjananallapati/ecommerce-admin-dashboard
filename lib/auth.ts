@@ -54,7 +54,8 @@ export const authOptions: NextAuthOptions = {
           }
         } catch (error) {
           console.error('Auth error:', error)
-          return null
+          // Surface a meaningful error so the client can distinguish infra vs credentials
+          throw new Error('AuthDatabaseError')
         }
       }
     })
