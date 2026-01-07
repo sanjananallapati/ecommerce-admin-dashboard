@@ -1,4 +1,5 @@
 # Server-Rendered E-commerce Product Management Dashboard
+
 # 🎯 Project Overview
 
 This is a full-stack e-commerce product management system designed for administrators to manage products, track inventory, view analytics, and handle secure image uploads. The application uses server-side rendering (SSR) for optimal performance and SEO, with a professional dark theme interface.
